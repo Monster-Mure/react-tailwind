@@ -11,7 +11,7 @@ function Card({ image, title, description }: CardProps) {
   const [isAdded, setIsAdded] = useState(false)
 
   return (
-    <article className="w-full max-w-xs overflow-hidden rounded-lg border border-stone-200 bg-white shadow-md">
+    <article className="w-full max-w-xs overflow-hidden rounded-lg border border-border bg-card text-card-foreground shadow-md">
       <img
         src={image}
         alt={`${title} coffee`}
@@ -20,14 +20,14 @@ function Card({ image, title, description }: CardProps) {
         className="h-36 w-full object-cover object-center"
       />
       <div className="p-4">
-        <p className="mb-1 text-xs font-semibold uppercase text-emerald-800">
+        <p className="mb-1 text-xs font-semibold uppercase text-emerald-800 dark:text-emerald-300">
           Small-batch roast
         </p>
-        <h2 className="text-lg font-semibold text-stone-900">{title}</h2>
-        <p className="mt-1 text-sm text-stone-600">{description}</p>
+        <h2 className="text-lg font-semibold">{title}</h2>
+        <p className="mt-1 text-sm text-muted-foreground">{description}</p>
         <div className="mt-4 flex items-center justify-between gap-3">
-          <p className="font-semibold text-stone-900">
-            $18 <span className="text-xs font-normal text-stone-500">/ 250 g</span>
+          <p className="font-semibold">
+            $18 <span className="text-xs font-normal text-muted-foreground">/ 250 g</span>
           </p>
           <Button
             onClick={() => setIsAdded(true)}
